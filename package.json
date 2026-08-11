@@ -9,8 +9,8 @@
 		"@aws-sdk/client-kinesis": "^3.830.0",
 		"@aws-sdk/util-retry": "^3.374.0",
 		"@coral-xyz/anchor": "^0.29.0",
-		"@velocity-exchange/common": "0.0.1",
-		"@velocity-exchange/sdk": "0.0.3",
+		"@velocity-exchange/common": "file:../velocity-common/common-ts",
+		"@velocity-exchange/sdk": "file:../protocol-v2/sdk",
 		"@opentelemetry/api": "^1.1.0",
 		"@opentelemetry/auto-instrumentations-node": "^0.31.1",
 		"@opentelemetry/exporter-prometheus": "^0.31.0",
@@ -60,9 +60,7 @@
 		"ts-node": "^10.9.1"
 	},
 	"resolutions": {
-		"@solana/web3.js": "1.98.0",
-		"@velocity-exchange/sdk": "npm:@velocity-exchange/sdk@0.0.3",
-		"@velocity-exchange/sdk": "0.0.3"
+		"@solana/web3.js": "1.98.0"
 	},
 	"scripts": {
 		"prepare": "husky install",

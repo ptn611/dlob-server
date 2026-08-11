@@ -15,7 +15,7 @@
 		"rootDir": "src",
 		"outDir": "./lib",
 		"paths": {
-			"@velocity-exchange/common/clients": ["./node_modules/@velocity-exchange/common/lib/clients"]
+			"@velocity-exchange/common/clients": ["../velocity-common/common-ts/lib/clients"]
 		}
 	},
 	"include": ["src/**/*"],
