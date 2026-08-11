@@ -3,7 +3,7 @@ on:
   pull_request:
     types: [opened, synchronize]
   repository_dispatch:
-    types: [sdk-update, drift-common-update]
+    types: [sdk-update]
 
 jobs:
   build-and-test:
@@ -31,12 +31,6 @@ jobs:
       # Payload: { version: "x.x.x" } - the SDK version
       - name: Add specific version of sdk (from sdk-update)
         if: github.event_name == 'repository_dispatch' && github.event.action == 'sdk-update'
-        run: yarn add @velocity-exchange/sdk@${{ github.event.client_payload.version }}
-
-      # Handle drift-common-update event (from drift-common repo)
-      # Payload: { version: "x.x.x", commit: "...", common-version: "x.x.x" }
-      - name: Add specific version of sdk (from drift-common-update)
-        if: github.event_name == 'repository_dispatch' && github.event.action == 'drift-common-update' && github.event.client_payload.version
         run: yarn add @velocity-exchange/sdk@${{ github.event.client_payload.version }}
 
       - name: Add specific version of common
